@@ -51,15 +51,15 @@
                                 
                              <div class="form-group">
                                  <label for="nombre">Nombre</label>
-                                 <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresar Nombre">
+                                 <input type="text" class="form-control" name="Nombre" id="nombre" placeholder="Ingresar Nombre">
                              </div>
                               <div class="form-group">
                                  <label for="nombre">Creado por</label>
-                                 <input type="text" class="form-control" name="Creado por" id="nombre" placeholder="Ingresar Password">
+                                 <input type="text" class="form-control" name="Creado_por" id="nombre" placeholder="Ingresar Creador">
                              </div>
                               <div class="form-group">
                                  <label for="nombre">Pais id</label>
-                                 <input type="text" class="form-control" name="Pais id" id="nombre" placeholder="Ingresar Fecha">
+                                 <input type="text" class="form-control" name="Pais_id" id="nombre" placeholder="Ingresar Pais">
                              </div>
                               
                              <td><input type="submit" name="guardar5" value="guardar"></td>

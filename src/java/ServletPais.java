@@ -33,13 +33,15 @@ public class ServletPais extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
             if(request.getParameter("crear")!=null){
+                
                 String nombre = request.getParameter("nombre");
-                String creado_por =request.getParameter("creado_por");
+                String creado_por =request.getParameter("creado");
                 Pais pais = new Pais();
                 pais.setNombre(nombre);
                 pais.setCreado_por(creado_por);
-                pais.GuardarHabilidad();
+                pais.GuardarPais();
                 response.sendRedirect("paises/index.jsp");
             }
             else if(request.getParameter("actualizar")!=null){
@@ -48,14 +50,14 @@ public class ServletPais extends HttpServlet {
                 Pais pais = new Pais();
                 pais.setPais_id(pais_id);
                 pais.setNombre(nombre);
-                pais.ActualizarHabilidad();
+                pais.ActualizarPais();
                 response.sendRedirect("paises/index.jsp");
             }
             else if(request.getParameter("eliminar")!=null){
                 int pais_id = Integer.parseInt(request.getParameter("eliminar"));
                 Pais pais = new Pais();
                 pais.setPais_id(pais_id);
-                pais.BorrarHabilidad();
+                pais.BorrarPais();
                 response.sendRedirect("paises/index.jsp");
             }
         }

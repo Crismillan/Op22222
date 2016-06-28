@@ -59,6 +59,7 @@
                             <th>NOMBRE</th>
                             <th>Habilidad_Id</th>                            
                             <th>Acciones</th>
+                            <th></th>
                             </thead>
                             <tbody>
                                 <%

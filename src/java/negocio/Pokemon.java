@@ -92,17 +92,16 @@ public class Pokemon {
         this.con = con;
     }
     public void GuardarPokemon(){
-    
-    con.setInsertar("insert into pokemones(nombre,fecha_nacimiento,numero,tipo_id,estado,creado_por,ciudad_id) values('"+this.getNombre()+"','"+this.getFecha_nacimiento()+"','"+this.getNumero()+"','"+this.getTipo_id() +"','activo','"+this.getCreado_por() +",'"+this.getCiudad_id()+"')  ");
+    con.setInsertar("insert into pokemones(nombre,fecha_nacimiento,numero,tipo_id,estado,creado_por,Ciudad_id)values('"+this.getNombre()+"','"+this.getFecha_nacimiento()+"','"+this.getNumero()+"','"+this.getTipo_id()+"','"+this.getCreado_por()+"','"+this.getCiudad_id()+"','activo')");
     }
     
     public void BorrarPokemon(){
-    con.setInsertar("update pokemones  set estado='pasivo' where pokemon_id='"+this.getPokemon_id() +"'");
+    con.setInsertar("update pokemones set estado='pasivo' where pokemon_id='"+this.getPokemon_id() +"'");
     
     }
     
     public void ActualizarPokemon(){
-    con.setInsertar("update pokemones set nombre='"+this.getNombre() +"',set fecha_nacimiento='"+this.getFecha_nacimiento() + "',set numero'"+this.getNumero() +"',set tipo_id'"+this.getTipo_id()+"' ,set estado='pasivo',set creado_por='"+this.getCreado_por() +"',set ciudad_id='"+this.getCiudad_id()+"' where pokemon_id='"+this.getPokemon_id() +"' ");
+    con.setInsertar("update pokemones set nombre='"+this.getNombre() +"',fecha_nacimiento='"+this.getFecha_nacimiento() + "',numero'"+this.getNumero() +"', tipo_id'"+this.getTipo_id()+"' ,estado='pasivo',creado_por='"+this.getCreado_por() +"',ciudad_id='"+this.getCiudad_id()+"' where pokemon_id='"+this.getPokemon_id() +"' ");
     
     }
     

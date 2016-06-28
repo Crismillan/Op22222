@@ -44,12 +44,13 @@ public class ServletPokemon extends HttpServlet {
                 response.sendRedirect("Pokemon/index.jsp");
                 
             } else if (request.getParameter("guardar2") != null) {
+                
                 String Nombre=request.getParameter("nombre");
                 int Numero=Integer.parseInt(request.getParameter("numero"));
                 String fecha=request.getParameter("fecha");
                 int Tipo=Integer.parseInt(request.getParameter("tipo"));
                 int Creado=Integer.parseInt(request.getParameter("creado"));
-                int Ciudad_id=Integer.parseInt(request.getParameter("ciudad_id"));
+                int Ciudad_id=Integer.parseInt(request.getParameter("ciudad"));
                 Pokemon pok = new Pokemon();
                 pok.setNombre(Nombre);
                 pok.setNumero(Numero);

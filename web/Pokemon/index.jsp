@@ -63,6 +63,7 @@
                                 <th>Creado Por</th>
                                 <th>Ciudad</th>
                                 <th>acciones</th>
+                                <th> </th>
                                 </thead>
                                 <tbody>
                                     <%

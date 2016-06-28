@@ -60,6 +60,7 @@
                             <th>Creado por</th>
                             <td>Pais_id</td>
                             <th>Acciones</th>
+                               <th></th>
                             </thead>
                             <tbody>
                                 <%

@@ -49,7 +49,7 @@
                         </div> 
                         <div class="form-group"> 
                             <label for="nombre">Creado</label> 
-                            <input type="text" class="form-control" name="creado" id="nombre" placeholder="Ingresar nombre"> 
+                            <input type="text" class="form-control" name="creado" id="nombre" placeholder="Ingresar Creador"> 
                         </div> 
 
 

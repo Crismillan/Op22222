@@ -58,7 +58,8 @@
                             <thead>
                             <th>ID</th>
                             <th>NOMBRE</th>                                                       
-                            <th>Acciones</th>
+                            <th>Acciones</th
+                            <th></th>
                             </thead>
                             <tbody>
                                 <%

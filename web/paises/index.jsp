@@ -58,6 +58,7 @@
                                 <th>Nombre</th>
                                 <th>Creado por</th>
                                 <th>Acciones</th>
+                                <th></th>
                             </thead>
                             <tbody>
                                 <% Coneccion con = new Coneccion();

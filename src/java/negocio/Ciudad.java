@@ -62,20 +62,14 @@ public class Ciudad {
         this.pais_id = pais_id;
     }
 
-    public Coneccion getCon() {
-        return con;
-    }
-
-    public void setCon(Coneccion con) {
-        this.con = con;
-    }
+    
     public void GuardarHabilidad(){
-        con.setInsertar("insert into Ciudades(nombre,creado_por,pais_id,estado) values('" + this.getNombre() + "','" + this.getCreado_por() + "','" + this.getPais_id() + "','Activo');");
+        con.setInsertar("insert into Ciudades(Nombre,Creado_por,Pais_id,estado) values('" + this.getNombre() + "','" + this.getCreado_por() + "','" + this.getPais_id() + "','activo');");
     }
     public void BorrarHabilidad(){
-        con.setInsertar("update ciudades set estado='pasivo' where ciudad_id='"+this.getCiudad_id()+"'");
+        con.setInsertar("update Ciudades set estado='pasivo' where ciudad_id='"+this.getCiudad_id()+"'");
     }
     public void ActualizarHabilidad(){
-        con.setInsertar("update ciudades set nombre='"+this.getNombre()+"',creado_por='"+this.getCreado_por()+"',estado='activo',pais_id='"+this.getPais_id()+"' where ciudad_id='"+this.getCiudad_id()+"'");
+        con.setInsertar("update Ciudades set nombre='"+this.getNombre()+"',creado_por='"+this.getCreado_por()+"',estado='activo',pais_id='"+this.getPais_id()+"' where ciudad_id='"+this.getCiudad_id()+"'");
     }
 }

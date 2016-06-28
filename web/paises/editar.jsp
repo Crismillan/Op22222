@@ -65,8 +65,8 @@
 
                          <form method="POST" action="../ServletPais"> 
                              <div class="form-group"> 
-                                 <label for="pais_id">ID</label> 
-                                 <input type="text" class="form-control" id="pais_id" name="pais_id" value='<% out.println("" + con.getResultado().getString("pais_id")); %>' readonly="true"> 
+                                 <label for="nombre">ID</label> 
+                                 <input type="text" class="form-control" id="nombre" name="pais_id" value='<% out.println("" + con.getResultado().getString("pais_id")); %>' readonly="true"> 
                              </div> 
                              <div class="form-group"> 
                                  <label for="nombre">Nombre </label> 

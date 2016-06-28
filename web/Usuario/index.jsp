@@ -60,6 +60,7 @@
                             <th>Password</th>
                             <th>Fecha de nacimiento</th>
                             <th>Acciones</th>
+                            <th></th>
                             </thead>
                             <tbody>
                                 <%
