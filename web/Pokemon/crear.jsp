@@ -35,6 +35,8 @@
                                     <li><a href="../Pokemon/index.jsp">Pokemon</a></li>
                                     <li><a href="../Habilidades/index.jsp">Habilidad</a></li>
                                     <li><a href="../Tipo/index.jsp">Tipos</a></li>
+                                    <li><a href="../Ciudades/index.jsp">Ciudades</a></li>
+                                    <li><a href="../paises/index.jsp">paises</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -68,6 +70,11 @@
                                  <label for="nombre">Creado Por</label>
                                  <input type="text" class="form-control" name="creado" id="nombre" placeholder="Ingresar Nombre">
                              </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Ciudad id</label>
+                        <input type="text" class="form-control" name="ciudad" id="nombre" placeholder="Ingresar Nombre">
+                    </div>
                                     
                               
                              <td><input type="submit" name="guardar2" value="guardar"></td>

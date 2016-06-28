@@ -1,3 +1,4 @@
+<%@page import="accesodato.Coneccion"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,7 +17,10 @@
 
         <!-- Custom styles for this template -->
         <link href="../template/css/cover.css" rel="stylesheet">
+
+
     </head>
+
     <body>
 
         <div class="site-wrapper">
@@ -41,38 +45,56 @@
                             </nav>
                         </div>
                     </div>
-                    <form method="POST" action="../ServletTipo">
-                    <div class="inner cover">
-                        <h1 class="cover-heading">Tipos</h1>
-                        <p class="lead">                 <!Cuerpo >
 
-                                <table class="table table-bordered">
-                                    
-                                
-                             <div class="form-group">
-                                 <label for="nombre">Nombre</label>
-                                 <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresar Nombre">
-                             </div>
-                              <div class="form-group">
-                                 <label for="nombre">N° de habilidad</label>
-                                 <input type="text" class="form-control" name="habilidad" id="nombre" placeholder="Ingresar Nombre">
-                             </div>
-                              
-                              
-                             <td><input type="submit" name="guardar3" value="guardar"></td>
-                         
-                                </table>
+                    <div class="panel-body">
+                        <h1 class="table table-bordered">Ciudades</h1>
+                        <p class="lead">                 <!Cuerpo >
+                        <div class="">
+
+
+                        </div>
+                        <% 
+                        int id = Integer.parseInt(request.getParameter("editar")); 
+                         Coneccion con = new Coneccion(); 
+                         con.setConsulta("select * from Paises where pais_id='" + id + "'"); 
+                        %> 
+                     <div class="panel-body"> 
+
+                        <div class="panel-body">
+                            <% while (con.getResultado().next()) {  %>  
+
+                         <form method="POST" action="../ServletPais"> 
+                             <div class="form-group"> 
+                                 <label for="pais_id">ID</label> 
+                                 <input type="text" class="form-control" id="pais_id" name="pais_id" value='<% out.println("" + con.getResultado().getString("pais_id")); %>' readonly="true"> 
+                             </div> 
+                             <div class="form-group"> 
+                                 <label for="nombre">Nombre </label> 
+                                 <input type="text" class="form-control" name="nombre" value='<% out.println("" + con.getResultado().getString("nombre")); %>' id="nombre" placeholder="Ingresar Nombre"> 
+                             </div> 
+          
+                             <button type="submit" name="actualizar" class="btn btn-default">Actualizar</button> 
+                         </form> 
+                       <% }%>  
+
+
+                                </div>
+
+                        </div>
                         </p>
 
                         <p class="lead">
 
                             <a href="index.jsp" class="btn btn-primary">Volver</a>
+
                         </p>
                     </div>
-                            </form>
-                        
+
                     <div class="mastfoot">
                         <div class="inner">
+
+
+
                         </div>
                     </div>
 

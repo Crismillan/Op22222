@@ -41,35 +41,23 @@
                             </nav>
                         </div>
                     </div>
-                    <form method="POST" action="../ServletTipo">
-                    <div class="inner cover">
-                        <h1 class="cover-heading">Tipos</h1>
-                        <p class="lead">                 <!Cuerpo >
+                    <form method="POST" action="../ServletPais"> 
 
-                                <table class="table table-bordered">
-                                    
-                                
-                             <div class="form-group">
-                                 <label for="nombre">Nombre</label>
-                                 <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresar Nombre">
-                             </div>
-                              <div class="form-group">
-                                 <label for="nombre">N° de habilidad</label>
-                                 <input type="text" class="form-control" name="habilidad" id="nombre" placeholder="Ingresar Nombre">
-                             </div>
-                              
-                              
-                             <td><input type="submit" name="guardar3" value="guardar"></td>
-                         
-                                </table>
-                        </p>
+                        <div class="form-group"> 
+                            <label for="nombre">Nombre</label> 
+                            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresar nombre"> 
+                        </div> 
+                        <div class="form-group"> 
+                            <label for="nombre">Creado</label> 
+                            <input type="text" class="form-control" name="creado" id="nombre" placeholder="Ingresar nombre"> 
+                        </div> 
 
-                        <p class="lead">
 
-                            <a href="index.jsp" class="btn btn-primary">Volver</a>
-                        </p>
-                    </div>
-                            </form>
+
+
+                        <button type="submit" name="crear" class="btn btn-default">Guardar</button> 
+                    </form> 
+
                         
                     <div class="mastfoot">
                         <div class="inner">

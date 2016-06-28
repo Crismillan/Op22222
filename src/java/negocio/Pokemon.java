@@ -11,6 +11,7 @@ public class Pokemon {
     private int tipo_id;
     private String Estado;
     private int creado_por;
+    private int ciudad_id;
 
     Coneccion con;
 
@@ -74,6 +75,15 @@ public class Pokemon {
         this.creado_por = creado_por;
     }
 
+    public int getCiudad_id() {
+        return ciudad_id;
+    }
+
+    public void setCiudad_id(int ciudad_id) {
+        this.ciudad_id = ciudad_id;
+    }
+    
+
     public Coneccion getCon() {
         return con;
     }
@@ -83,16 +93,16 @@ public class Pokemon {
     }
     public void GuardarPokemon(){
     
-    con.setInsertar("insert into pokemones(nombre,fecha_nacimiento,numero,tipo_id,estado,creado_por) values('"+this.getNombre()+"','"+this.getFecha_nacimiento()+"','"+this.getNumero()+"','"+this.getTipo_id() +"','activo','"+this.getCreado_por() +"')  ");
+    con.setInsertar("insert into pokemones(nombre,fecha_nacimiento,numero,tipo_id,estado,creado_por,ciudad_id) values('"+this.getNombre()+"','"+this.getFecha_nacimiento()+"','"+this.getNumero()+"','"+this.getTipo_id() +"','activo','"+this.getCreado_por() +",'"+this.getCiudad_id()+"')  ");
     }
     
     public void BorrarPokemon(){
-    con.setInsertar("update pokemones  set estado='pasivo' where habilidad_id='"+this.getPokemon_id() +"'");
+    con.setInsertar("update pokemones  set estado='pasivo' where pokemon_id='"+this.getPokemon_id() +"'");
     
     }
     
     public void ActualizarPokemon(){
-    con.setInsertar("update pokemones set nombre='"+this.getNombre() +"',set fecha_nacimiento='"+this.getFecha_nacimiento() + "',set numero'"+this.getNumero() +"',set tipo_id'"+this.getTipo_id()+"' ,set estado='pasivo',set creado_por='"+this.getCreado_por() +"' where habilidad_id='"+this.getPokemon_id() +"' ");
+    con.setInsertar("update pokemones set nombre='"+this.getNombre() +"',set fecha_nacimiento='"+this.getFecha_nacimiento() + "',set numero'"+this.getNumero() +"',set tipo_id'"+this.getTipo_id()+"' ,set estado='pasivo',set creado_por='"+this.getCreado_por() +"',set ciudad_id='"+this.getCiudad_id()+"' where pokemon_id='"+this.getPokemon_id() +"' ");
     
     }
     

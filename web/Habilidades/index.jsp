@@ -39,6 +39,9 @@
                                     <li><a href="../Pokemon/index.jsp">Pokemon</a></li>
                                     <li><a href="index.jsp">Habilidad</a></li>
                                     <li><a href="../Tipo/index.jsp">Tipos</a></li>
+                                    <li><a href="../Ciudades/index.jsp">Ciudades</a></li>
+                                    <li><a href="../paises/index.jsp">paises</a></li>
+                                    
                                 </ul>
                             </nav>
                         </div>

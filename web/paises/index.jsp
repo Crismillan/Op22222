@@ -38,8 +38,8 @@
                                     <li><a href="../Usuario/index.jsp">Usuario</a></li>
                                     <li><a href="../Pokemon/index.jsp">Pokemon</a></li>
                                     <li><a href="../Habilidades/index.jsp">Habilidad</a></li>
-                                    <li><a href="index.jsp">Tipos</a></li>
-                                    <li><a href="../Ciudades/index.jsp">Ciudades</a></li>
+                                    <li><a href="../Tipo/index.jsp">Tipos</a></li>
+                                   <li><a href="../Ciudades/index.jsp">Ciudades</a></li>
                                     <li><a href="../paises/index.jsp">paises</a></li>
                                 </ul>
                             </nav>
@@ -49,37 +49,43 @@
     
     <br><br><br>
                     <div class="inner cover">
-                        <h1 class="cover-heading">Tipos</h1>
+                        <h1 class="cover-heading">Ciudades</h1>
                         <p class="lead"></p>
 
-                        <table class="table table-bordered">
-
+                        <table class="table table-condensed table-hover">
                             <thead>
-                            <th>ID</th>
-                            <th>NOMBRE</th>
-                            <th>Habilidad_Id</th>                            
-                            <th>Acciones</th>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Creado por</th>
+                                <th>Acciones</th>
                             </thead>
                             <tbody>
-                                <%
-                                    Coneccion con = new Coneccion();
-                                    con.setConsulta("select * from tipos where estado='activo'");
-                                    while (con.getResultado().next()) {
-                                        out.println("<tr>");
-                                        out.println("<td>" + con.getResultado().getString("tipo_id") + "</td>");
-                                        out.println("<td>" + con.getResultado().getString("nombre") + "</td>");
-                                        out.println("<td>" + con.getResultado().getString("habilidad_id") + "</td>");
-                                        out.println("<td>" + "<a href='../ServletTipo?eliminar=" + con.getResultado().getString("tipo_id") + "'>Eliminar</a>" + "</td>");
-                                        out.println("<td>"+"<a href='editar.jsp?editar3="+con.getResultado().getString("tipo_id")+"' class='btn btn-green'>Editar</a>"+"</td>");
-                                              
-                                        out.println("</tr>");
+                                <% Coneccion con = new Coneccion();
+                                if(request.getParameter("buscar")!=null){
+                                    if(request.getParameter("buscar").isEmpty()){
+                                        con.setConsulta("select * from paises where estado='Activo'");
                                     }
-                                %>         
-                                
-                                
+                                    else{
+                                        String nombre = request.getParameter("buscar");
+                                        con.setConsulta("select * from paises where estado='Activo' and nombre like '%" + nombre + "%'");
+                                    }
+                                }
+                                else{
+                                con.setConsulta("select * from paises where estado='Activo'");
+                                }
+                                while(con.getResultado().next()){
+                                    out.println("<tr>");
+                                    out.println("<td>" + con.getResultado().getString("pais_id") + "</td>");
+                                    out.println("<td>" + con.getResultado().getString("nombre") + "</td>");
+                                    out.println("<td>" + con.getResultado().getString("creado_por") + "</td>");
+                                    out.println("<td><a href='../ServletPais?eliminar=" + con.getResultado().getString("pais_id") + "' class='btn btn-danger'>Eliminar</a>&nbsp;&nbsp;<a href='editar.jsp?editar=" + con.getResultado().getString("pais_id") + "' class='btn btn-success'>Editar Pais</a></td>");
+                                    out.println("</tr>");
+                                }
+                                %>
                             </tbody>
                             
-                        </table> 
+                        </table>
+ 
                        
                     </div>
                                <a href="../index.jsp"class="btn btn-danger">Volver</a>   <a href="crear.jsp" class="btn btn-primary">nuevo</a>

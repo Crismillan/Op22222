@@ -1,3 +1,4 @@
+<%@page import="accesodato.Coneccion"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,7 +17,10 @@
 
         <!-- Custom styles for this template -->
         <link href="../template/css/cover.css" rel="stylesheet">
+
+
     </head>
+
     <body>
 
         <div class="site-wrapper">
@@ -41,38 +45,61 @@
                             </nav>
                         </div>
                     </div>
-                    <form method="POST" action="../ServletTipo">
-                    <div class="inner cover">
-                        <h1 class="cover-heading">Tipos</h1>
-                        <p class="lead">                 <!Cuerpo >
 
-                                <table class="table table-bordered">
-                                    
-                                
-                             <div class="form-group">
-                                 <label for="nombre">Nombre</label>
-                                 <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresar Nombre">
-                             </div>
-                              <div class="form-group">
-                                 <label for="nombre">N° de habilidad</label>
-                                 <input type="text" class="form-control" name="habilidad" id="nombre" placeholder="Ingresar Nombre">
-                             </div>
-                              
-                              
-                             <td><input type="submit" name="guardar3" value="guardar"></td>
-                         
-                                </table>
+                    <div class="panel-body">
+                        <h1 class="table table-bordered">Ciudades</h1>
+                        <p class="lead">                 <!Cuerpo >
+                        <div class="">
+
+
+                        </div>
+                        <%
+                            int id = Integer.parseInt(request.getParameter("editar5"));
+                            Coneccion con = new Coneccion();
+                            con.setConsulta("select * from Ciudades where Ciudad_id='" + id + "'");
+                        %>
+                        <div class="panel-body">
+                            <% while (con.getResultado().next()) {  %>
+
+                            <form method="POST" action="../ServletCiudad?editar5=si">
+
+
+                                <!-- OJO CON EL CAMPO READONLY QUE ES ENVIADO POR EL FORMULARIO PARA ACTUALIZAR -->
+                                <input type="text" readonly="true" value='<% out.println("" + con.getResultado().getString("ciudad_id")); %>' name="id">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre </label>
+                                    <input type="text" class="form-control" name="nombre" value='<% out.println("" + con.getResultado().getString("nombre")); %>' id="nombre" placeholder="Ingresar Nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nombre">Creado_por</label>
+                                    <input type="text" class="form-control" name="nombre" value='<% out.println("" + con.getResultado().getString("creado_por")); %>' id="nombre" placeholder="Ingresar Nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nombre">Habilidad</label>
+                                        <input type="text" class="form-control" name="Pais" value='<% out.println("" + con.getResultado().getString("pais_id")); %>' id="nombre" placeholder="Ingresar Nombre">
+                                        </div>
+                                        
+                                        <td><input type="submit" name="editar5" value="Actualizar"></td>
+                                        </form>
+                                        <% }%> 
+
+                                </div>
+
+                        </div>
                         </p>
 
                         <p class="lead">
 
                             <a href="index.jsp" class="btn btn-primary">Volver</a>
+
                         </p>
                     </div>
-                            </form>
-                        
+
                     <div class="mastfoot">
                         <div class="inner">
+
+
+
                         </div>
                     </div>
 

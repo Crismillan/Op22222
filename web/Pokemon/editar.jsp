@@ -39,6 +39,8 @@
                                     <li><a href="../Pokemon/index.jsp">Pokemon</a></li>
                                     <li><a href="../Habilidades/index.jsp">Habilidad</a></li>
                                     <li><a href="../Tipo/index.jsp">Tipos</a></li>
+                                    <li><a href="../Ciudades/index.jsp">Ciudades</a></li>
+                                    <li><a href="../paises/index.jsp">paises</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -83,6 +85,10 @@
                                 <div class="form-group">
                                     <label for="nombre">Creado Por</label>
                                     <input type="text" class="form-control" name="creado" value='<% out.println("" + con.getResultado().getString("creado_por")); %>' id="nombre" placeholder="Ingresar Nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nombre">Ciudad</label>
+                                    <input type="text" class="form-control" name="ciudad" value='<% out.println("" + con.getResultado().getString("ciudad_id")); %>' id="nombre" placeholder="Ingresar Nombre">
                                 </div>
 
                                 <td><input type="submit" name="editar2" value="Actualizar"></td>

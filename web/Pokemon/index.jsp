@@ -39,6 +39,8 @@
                                     <li><a href="../Pokemon/index.jsp">Pokemon</a></li>
                                     <li><a href="../Habilidades/index.jsp">Habilidad</a></li>
                                     <li><a href="../Tipo/index.jsp">Tipos</a></li>
+                                    <li><a href="../Ciudades/index.jsp">Ciudades</a></li>
+                                    <li><a href="../paises/index.jsp">paises</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -59,12 +61,13 @@
                                 <th>Numero</th>
                                 <th>Tipo_Id</th>
                                 <th>Creado Por</th>
+                                <th>Ciudad</th>
                                 <th>acciones</th>
                                 </thead>
                                 <tbody>
                                     <%
                                         Coneccion con = new Coneccion();
-                                        con.setConsulta("select usuarios.nombre as nom,pokemones.nombre,pokemones.numero,pokemones.tipo_id,pokemones.pokemon_id,pokemones.fecha_nacimiento from usuarios inner join pokemones on usuarios.usuario_id=pokemones.creado_por  where pokemones.estado='activo'");
+                                        con.setConsulta("select usuarios.nombre as nom,pokemones.nombre,pokemones.numero,pokemones.tipo_id,pokemones.pokemon_id,pokemones.ciudad_id,pokemones.fecha_nacimiento from usuarios inner join pokemones on usuarios.usuario_id=pokemones.creado_por  where pokemones.estado='activo'");
                                         while (con.getResultado().next()) {
                                             out.println("<tr>");
                                             out.println("<td>" + con.getResultado().getString("pokemon_id") + "</td>");
@@ -73,6 +76,7 @@
                                             out.println("<td>" + con.getResultado().getString("numero") + "</td>");
                                             out.println("<td>" + con.getResultado().getString("tipo_id") + "</td>");
                                             out.println("<td>" + con.getResultado().getString("nom") + "</td>");
+                                            out.println("<td>"+con.getResultado().getString("ciudad_id")+"</td>");
                                             out.println("<td>" + "<a href='../ServletPokemon?eliminar=" + con.getResultado().getString("pokemon_id") + "'>Eliminar</a>" + "</td>");
                                             out.println("<td>"+"<a href='editar.jsp?editar2="+con.getResultado().getString("pokemon_id")+"' class='btn btn-green'>Editar</a>"+"</td>");
                                            

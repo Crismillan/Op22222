@@ -35,15 +35,15 @@
                                     <li><a href="../Pokemon/index.jsp">Pokemon</a></li>
                                     <li><a href="../Habilidades/index.jsp">Habilidad</a></li>
                                     <li><a href="../Tipo/index.jsp">Tipos</a></li>
-                                    <li><a href="../Ciudades/index.jsp">Ciudades</a></li>
+                                   <li><a href="../Ciudades/index.jsp">Ciudades</a></li>
                                     <li><a href="../paises/index.jsp">paises</a></li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
-                    <form method="POST" action="../ServletTipo">
+                    <form method="POST" action="../ServletCiudad">
                     <div class="inner cover">
-                        <h1 class="cover-heading">Tipos</h1>
+                        <h1 class="cover-heading">Ciudades</h1>
                         <p class="lead">                 <!Cuerpo >
 
                                 <table class="table table-bordered">
@@ -54,12 +54,15 @@
                                  <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresar Nombre">
                              </div>
                               <div class="form-group">
-                                 <label for="nombre">N° de habilidad</label>
-                                 <input type="text" class="form-control" name="habilidad" id="nombre" placeholder="Ingresar Nombre">
+                                 <label for="nombre">Creado por</label>
+                                 <input type="text" class="form-control" name="Creado por" id="nombre" placeholder="Ingresar Password">
+                             </div>
+                              <div class="form-group">
+                                 <label for="nombre">Pais id</label>
+                                 <input type="text" class="form-control" name="Pais id" id="nombre" placeholder="Ingresar Fecha">
                              </div>
                               
-                              
-                             <td><input type="submit" name="guardar3" value="guardar"></td>
+                             <td><input type="submit" name="guardar5" value="guardar"></td>
                          
                                 </table>
                         </p>

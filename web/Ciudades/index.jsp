@@ -38,7 +38,7 @@
                                     <li><a href="../Usuario/index.jsp">Usuario</a></li>
                                     <li><a href="../Pokemon/index.jsp">Pokemon</a></li>
                                     <li><a href="../Habilidades/index.jsp">Habilidad</a></li>
-                                    <li><a href="index.jsp">Tipos</a></li>
+                                    <li><a href="../Tipo/index.jsp">Tipos</a></li>
                                     <li><a href="../Ciudades/index.jsp">Ciudades</a></li>
                                     <li><a href="../paises/index.jsp">paises</a></li>
                                 </ul>
@@ -49,7 +49,7 @@
     
     <br><br><br>
                     <div class="inner cover">
-                        <h1 class="cover-heading">Tipos</h1>
+                        <h1 class="cover-heading">Ciudades</h1>
                         <p class="lead"></p>
 
                         <table class="table table-bordered">
@@ -57,20 +57,22 @@
                             <thead>
                             <th>ID</th>
                             <th>NOMBRE</th>
-                            <th>Habilidad_Id</th>                            
+                            <th>Creado por</th>
+                            <td>Pais_id</td>
                             <th>Acciones</th>
                             </thead>
                             <tbody>
                                 <%
                                     Coneccion con = new Coneccion();
-                                    con.setConsulta("select * from tipos where estado='activo'");
+                                    con.setConsulta("select * from Ciudades where estado='activo'");
                                     while (con.getResultado().next()) {
                                         out.println("<tr>");
-                                        out.println("<td>" + con.getResultado().getString("tipo_id") + "</td>");
+                                        out.println("<td>" + con.getResultado().getString("ciudad_id") + "</td>");
                                         out.println("<td>" + con.getResultado().getString("nombre") + "</td>");
-                                        out.println("<td>" + con.getResultado().getString("habilidad_id") + "</td>");
-                                        out.println("<td>" + "<a href='../ServletTipo?eliminar=" + con.getResultado().getString("tipo_id") + "'>Eliminar</a>" + "</td>");
-                                        out.println("<td>"+"<a href='editar.jsp?editar3="+con.getResultado().getString("tipo_id")+"' class='btn btn-green'>Editar</a>"+"</td>");
+                                        out.println("<td>" + con.getResultado().getString("creado_por") + "</td>");
+                                        out.println("<td>" + con.getResultado().getString("pais_id") + "</td>");
+                                        out.println("<td>" + "<a href='../ServletCiudad?eliminar=" + con.getResultado().getString("ciudad_id") + "'>Eliminar</a>" + "</td>");
+                                        out.println("<td>"+"<a href='editar.jsp?editar5="+con.getResultado().getString("ciudad_id")+"' class='btn btn-green'>Editar</a>"+"</td>");
                                               
                                         out.println("</tr>");
                                     }

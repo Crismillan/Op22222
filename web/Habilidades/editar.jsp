@@ -39,6 +39,8 @@
                                     <li><a href="../Pokemon/index.jsp">Pokemon</a></li>
                                     <li><a href="../Habilidades/index.jsp">Habilidad</a></li>
                                     <li><a href="../Tipo/index.jsp">Tipos</a></li>
+                                    <li><a href="../Ciudades/index.jsp">Ciudades</a></li>
+                                    <li><a href="../paises/index.jsp">paises</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -63,8 +65,10 @@
 
 
                                 <!-- OJO CON EL CAMPO READONLY QUE ES ENVIADO POR EL FORMULARIO PARA ACTUALIZAR -->
-                                <input type="text" readonly="true" value='<% out.println("" + con.getResultado().getString("habilidad_id")); %>' name="id">
+                                
                                 <div class="form-group">
+                                    <label for="pais_id">ID</label> 
+                                    <input type="text" class="form-control" readonly="true" value='<% out.println("" + con.getResultado().getString("habilidad_id")); %>' name="id">
                                     <label for="nombre">Tipo </label>
                                     <input type="text" class="form-control" name="nombre" value='<% out.println("" + con.getResultado().getString("nombre")); %>' id="nombre" placeholder="Ingresar Nombre">
                                 </div>
