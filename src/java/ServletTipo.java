@@ -32,12 +32,13 @@ public class ServletTipo extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        try (PrintWriter out = response.getWriter())
+        
+        {
             if (request.getParameter("eliminar")!=null) {
                 int id=Integer.parseInt(request.getParameter("eliminar"));
-               out.println("Eliminar ID:"+id);
                Tipos typ=new Tipos();
-               typ.getTipo_id();
+               typ.setTipo_id(id);
                typ.BorrarTipos();
                response.sendRedirect("Tipo/index.jsp");
 
@@ -48,7 +49,7 @@ public class ServletTipo extends HttpServlet {
                 typ.setNombre(nombre);
                 typ.setHabilidad(habilidad);
                 typ.GuardarTipos();
-                response.sendRedirect("Tipos/index.jsp");
+                response.sendRedirect("Tipo/index.jsp");
                 
             }else if(request.getParameter("editar3") != null){
                 int tipo_id = Integer.parseInt(request.getParameter("id"));
